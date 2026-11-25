@@ -1,0 +1,19 @@
+@host = http://localhost:5123
+
+### The newest sessions
+GET {{host}}/api/Sessions
+
+### Add a session
+POST {{host}}/api/Sessions
+Content-Type: application/json
+
+{
+  "start": "2026-10-20T18:00",
+  "end": "2026-10-20T19:30"
+}
+
+### The exercises of a session
+GET {{host}}/api/Exercises?sessionId=1000
+
+### Statistics of the last 4 weeks
+GET {{host}}/api/Stats?weeks=4
